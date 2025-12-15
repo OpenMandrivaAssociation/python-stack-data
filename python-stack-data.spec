@@ -6,8 +6,8 @@ Summary:	Extract data from python stack frames and tracebacks for informative di
 URL:		https://pypi.org/project/stack-data/
 License:	MIT
 Group:		Development/Python
-BuildRequires:	python
 BuildSystem:	python
+BuildRequires:	python%{pyver}dist(setuptools)
 BuildArch:	noarch
 
 %description
