@@ -9,6 +9,10 @@ Group:		Development/Python
 BuildSystem:	python
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildArch:	noarch
+# Make the dependency on executing optional to avoid cyclical dependency loop
+# stack-data requires executing, which requires ipython, which requires stack-data
+%define __requires_exclude .*executing.*
+Recommends:	python%{pyver}dist(executing)
 
 %description
 Extract data from python stack frames and tracebacks for informative displays
